@@ -9,37 +9,37 @@ import static com.stellaproject.Reptiles.printReptiles;
 import static com.stellaproject.ZooMemberLogin.checkMember;
 import static com.stellaproject.ZooMemberLogin.getZooMemberLogin;
 
-public class Main {
+public class Main { 
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in); 
+        String password = "zooMember123"; 
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String password = "zooMember123";
+// Create an instance of ZooMemberLogin & check if the user is a member 
+        ZooMemberLogin zooMemberLogin = getZooMemberLogin(password); 
+        checkMember(scanner, zooMemberLogin); 
+        char response; 
+        String category; 
+// Loop to enable the user to repeatedly request additional information. 
+        do { 
+            category = selectCategory(scanner); 
+            switch (category) { 
+                case "1": 
+                    printMammals(); 
+                    break; 
+ 
+                case "2": 
+                    printReptiles(); 
+                    break; 
+ 
+                case "3": 
+                    printAquatics(); 
+            } 
+            System.out.println("Do you need more information? Y/N"); 
+// Get user response 
+            response = scanner.nextLine().charAt(0); 
+        } 
 
-        // Create an instance of ZooMemberLogin & check if the user is a member
-        ZooMemberLogin zooMemberLogin = getZooMemberLogin(password);
-        checkMember(scanner, zooMemberLogin);
-        char response;
-        String category;
-
-        do {
-            category = selectCategory(scanner);
-            switch (category) {
-                case "1":
-                    printMammals();
-                    break;
-
-                case "2":
-                    printReptiles();
-                    break;
-
-                case "3":
-                    printAquatics();
-            }
-            System.out.println("Do you need more information? Y/N");
-
-            response = scanner.nextLine().charAt(0);
-        }
-        while (response == 'Y' || response == 'y');
-        System.out.println("Thank you Member. Goodbye!");
-    }
-}
+// Continue loop if  wants more information 
+        while (response == 'Y' || response == 'y'); 
+        System.out.println("Thank you Member. Goodbye!"); 
+    } 
