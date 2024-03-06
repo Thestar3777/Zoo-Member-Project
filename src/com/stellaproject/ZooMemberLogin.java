@@ -16,7 +16,8 @@ public class ZooMemberLogin {
         System.out.println("\nWelcome to the Zoo Management System!\n");
         return zooMemberLogin;
     }
-    // Method to check if the user is a member and authenticate them
+    
+    // Method to verify if the user is a member and authenticate them
     public static void checkMember(Scanner scanner, ZooMemberLogin zooMemberLogin) {
         boolean isAuthenticated = false;
         while (!isAuthenticated) {
