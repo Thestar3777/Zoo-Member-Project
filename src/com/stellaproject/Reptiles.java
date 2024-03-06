@@ -1,9 +1,14 @@
 package com.stellaproject;
 
 public class Reptiles {
+
+    // It generates inner class instances: Pythons, Chameleons and Turtles
+
     static Reptiles.Pythons pythons = new Reptiles.Pythons("Ball Python", 2);
     static Reptiles.Chameleons chameleons = new Reptiles.Chameleons("Veiled Chameleon", 5);
     static Reptiles.Turtles turtles = new Reptiles.Turtles("Red-eared Slider", 4);
+
+    // Method to print information about reptiles:
 
     public static void printReptiles() {
         System.out.println("You chose Reptiles: ");
@@ -18,6 +23,8 @@ public class Reptiles {
         System.out.println(turtles.getSpecie() + "  count: " + turtles.getQuantity());
         System.out.println("-------------------------------------------------");
     }
+
+    // Inner class Pythons, Chameleons, and Turtles with subclass Animals
 
     public static class Pythons extends Animals {
         public Pythons(String specie, int quantity) {
