@@ -1,10 +1,14 @@
 package com.stellaproject;
 public class Mammals {
 
+// It generates inner class instances: Horses, Lions, and Monkeys
+    
     static Mammals.Lions lions = new Mammals.Lions("African Lion", 4);
     static Mammals.Monkeys monkeys = new Mammals.Monkeys("Chimpanzee", 25);
     static Mammals.Horses horses = new Mammals.Horses("African horse", 3);
 
+// Method to print information about mammals:
+    
     public static void printMammals() {
         System.out.println("You chose Mammals: ");
         System.out.println("Presenting data...");
@@ -18,6 +22,9 @@ public class Mammals {
         System.out.println(horses.getSpecie() + "   count: " + horses.getQuantity());
         System.out.println("-------------------------------------------------");
     }
+
+    // Inner class Lions, Monkeys, and Horses with subclass Animals
+
     public static class Lions extends Animals {
         public Lions(String specie, int quantity) {
             super(specie, quantity);
