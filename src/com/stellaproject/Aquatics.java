@@ -1,9 +1,14 @@
 package com.stellaproject;
 
 public class Aquatics {
+
+    // It generates three inner-class instances: tropical fish, jellyfish, and penguins.
+
     static Aquatics.TropicalFish tropicalFish = new Aquatics.TropicalFish("Angelfish", 20);
     static Aquatics.Jellyfish jellyfish = new Aquatics.Jellyfish("Moon Jellyfish", 5);
     static Aquatics.Penguins penguins = new Aquatics.Penguins("Macaroni penguin", 15);
+
+    // Method to print information about aquatics:
 
     static void printAquatics() {
         System.out.println("You chose Aquatics: ");
@@ -18,6 +23,9 @@ public class Aquatics {
         System.out.println(penguins.getSpecie() + "  count: " + penguins.getQuantity());
         System.out.println("-------------------------------------------------");
     }
+
+    // Inner class TropicalFish, Jellyfish, and Penguins with subclass Animals
+
     public static class TropicalFish extends Animals {
         public TropicalFish(String specie, int quantity) {
             super(specie, quantity);
